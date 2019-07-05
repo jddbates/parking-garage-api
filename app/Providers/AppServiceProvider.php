@@ -4,6 +4,10 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
+use App\Ticket;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -23,6 +27,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // gennerate uuid on ticket creation
+        Ticket::creating(function ($ticket) {
+            $ticket->uuid = (string) Str::uuid();
+        });
     }
 }

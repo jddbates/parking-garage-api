@@ -16,6 +16,6 @@ class GarageController extends Controller
      */
     public function show()
     {
-        return new GarageResource(Garage::find(1));
+        return new GarageResource(Garage::findOrFail(1));
     }
 }

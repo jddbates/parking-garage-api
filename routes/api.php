@@ -33,4 +33,12 @@ Route::get('ticket/{id}', 'TicketController@show');
 Route::post('ticket', 'TicketController@store');
 
 // Pay Ticket Balance
-Route::put('ticket/{id}', 'TicketController@store');
+Route::put('ticket/{id}/{amount}', 'TicketController@update');
+
+// Delete Ticket
+Route::delete('ticket/{id}', 'TicketController@destroy');
+
+// Default to page not found
+Route::fallback(function(){
+    return response()->json(['error' => 'Page fot found'], 404);
+});

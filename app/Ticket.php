@@ -32,6 +32,7 @@ class Ticket extends Model
     {
         $garage = Garage::first();
         $rate = $this->get_rate($this->minutes_elapsed());
+        // price * (1 + percentage / 100)^n
         $price = ($garage->base_rate * pow(1 + $garage->rate_multiplier, $rate->level)) / 100;
         return number_format($price, 2);
     }

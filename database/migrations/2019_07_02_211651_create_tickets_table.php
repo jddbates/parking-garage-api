@@ -15,9 +15,9 @@ class CreateTicketsTable extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('garage_id')->unsigned();
+            $table->integer('garage_id')->unsigned()->default(1);;
             $table->uuid('uuid');
-            $table->boolean('is_paid')->default(0);
+            $table->tinyInteger('is_paid')->default(0);
             $table->timestamps();
         });
 

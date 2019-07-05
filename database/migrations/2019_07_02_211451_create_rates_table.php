@@ -32,29 +32,29 @@ class CreateRatesTable extends Migration
                 'garage_id' => 1,
                 'level' => 0,
                 'title' => '1h',
-                'lower_minutes' => 0.5,
-                'upper_minutes' => 0.5
+                'lower_minutes' => 0,
+                'upper_minutes' => 60
             ),
             array(
                 'garage_id' => 1,
                 'level' => 1,
                 'title' => '3h',
-                'lower_minutes' => 0.5,
-                'upper_minutes' => 0.5
+                'lower_minutes' => 60,
+                'upper_minutes' => 180
             ),
             array(
                 'garage_id' => 1,
                 'level' => 2,
                 'title' => '6hr',
-                'lower_minutes' => 0.5,
-                'upper_minutes' => 0.5
+                'lower_minutes' => 180,
+                'upper_minutes' => 360
             ),
             array(
                 'garage_id' => 1,
                 'level' => 3,
                 'title' => 'ALL DAY',
-                'lower_minutes' => 0.5,
-                'upper_minutes' => 0.5
+                'lower_minutes' => 360,
+                'upper_minutes' => PHP_INT_MAX
             ),
         ));
 

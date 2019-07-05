@@ -5,7 +5,18 @@ Laravel Framework 5.8.26
 
 # set db connection in .env file
 DB_CONNECTION=sqlite
-DB_DATABASE=database/database.sqlite
+
+# set sqlite database path in config/database.php
+
+```
+'sqlite' => [
+    'driver' => 'sqlite',
+    'url' => env('DATABASE_URL'),
+    'database' => database_path('database.sqlite'),
+    'prefix' => '',
+    'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+],
+```
 
 # create the sqlite file
 touch database/database.sqlite

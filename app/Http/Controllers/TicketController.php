@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Ticket;
 use Illuminate\Http\Request;
+use App\Http\Resources\TicketCollection;
+use App\Http\Resources\Ticket as TicketResource;
 
 class TicketController extends Controller
 {
@@ -14,7 +16,7 @@ class TicketController extends Controller
      */
     public function index()
     {
-        //
+        return new TicketCollection(Ticket::all());
     }
 
     /**
@@ -44,9 +46,9 @@ class TicketController extends Controller
      * @param  \App\Ticket  $ticket
      * @return \Illuminate\Http\Response
      */
-    public function show(Ticket $ticket)
+    public function show($id)
     {
-        //
+        return new TicketResource(Ticket::find($id));
     }
 
     /**

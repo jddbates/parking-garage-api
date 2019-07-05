@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Ticket;
 
 class Garage extends Model
 {
@@ -20,6 +21,14 @@ class Garage extends Model
     public function rates()
     {
         return $this->hasMany('App\Rate');
+    }
+
+    /**
+     * Get the number of parking spots available for the garage.
+     */
+    public function spots_available()
+    {
+        return $this->parking_spots - Ticket::where('is_paid', 0)->count();
     }
 
 }

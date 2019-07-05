@@ -28,7 +28,7 @@ class TicketController extends Controller
     public function store()
     {
         $garage = Garage::first();
-        if ($garage->parking_spots <= 0) {
+        if ($garage->spots_available() <= 0) {
             return response()->json(['error' => 'No spaces available'], 422);
         }
         $ticket = new Ticket;

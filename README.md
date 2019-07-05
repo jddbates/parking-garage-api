@@ -15,7 +15,7 @@
 - running the seeder refreshes the tickets table and creates 10 tickets that have random created_at timestamp within the last 9 hours
 - there are only 12 parking spots
 - only unpaid tickets take up a spot, its assumed someone pays as they are exiting
-- available spots = total spots - unpaid spots
+- available spots = total spots - unpaid tickets
 
 # API Endpoints
 

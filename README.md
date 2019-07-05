@@ -3,10 +3,13 @@
 ### SETUP
 - PHP 7.1.14
 - Laravel Framework 5.8.26
+- Composer version 1.8.6
 - `git clone git@github.com:jddbates/parking-garage-api.git`
 - `cd parking-garage-api`
+- create env file `touch .env`
 - set db connection in .env file `DB_CONNECTION=sqlite`
 - create the sqlite file `touch database/database.sqlite`
+- run `composer install`
 - run migrations, this will also populate garage and rates tables `php artisan migrate`
 - run database seeder to create sample tickets `php artisan db:seed`
 - start local server with `php artisan serve`
